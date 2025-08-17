@@ -1,0 +1,320 @@
+{
+  "timestamp": "2025-08-17T09:58:28.684Z",
+  "summary": {
+    "totalFiles": 3,
+    "totalHabits": 16,
+    "totalPrimary": 8,
+    "goalCoverage": {
+      "feel_better": [
+        {
+          "file": "feel_better_habits-en.json",
+          "goal": "feel_better",
+          "language": "en",
+          "habitCount": 8,
+          "primaryCount": 3,
+          "priorityRange": [
+            1,
+            8
+          ],
+          "habits": [
+            {
+              "id": "feel_001_gratitude_journaling",
+              "title": "Three Good Things Gratitude Practice",
+              "priority": 1,
+              "isPrimary": true,
+              "effectiveness": 9.4
+            },
+            {
+              "id": "feel_016_box_breathing",
+              "title": "Box Breathing Reset",
+              "priority": 2,
+              "isPrimary": true,
+              "effectiveness": 8.6
+            },
+            {
+              "id": "feel_021_micro_kindness",
+              "title": "Micro-Kindness Challenge",
+              "priority": 3,
+              "isPrimary": true,
+              "effectiveness": 8.8
+            },
+            {
+              "id": "feel_018_cold_exposure",
+              "title": "Cold Exposure Protocol",
+              "priority": 4,
+              "isPrimary": false,
+              "effectiveness": 8.3
+            },
+            {
+              "id": "feel_017_power_posing",
+              "title": "Power Posing Protocol",
+              "priority": 5,
+              "isPrimary": false,
+              "effectiveness": 7.9
+            },
+            {
+              "id": "feel_019_grounding_5_4_3_2_1",
+              "title": "5-4-3-2-1 Grounding Technique",
+              "priority": 6,
+              "isPrimary": false,
+              "effectiveness": 8.1
+            },
+            {
+              "id": "feel_020_future_self_visualization",
+              "title": "Future Self Visualization",
+              "priority": 7,
+              "isPrimary": false,
+              "effectiveness": 7.7
+            },
+            {
+              "id": "feel_022_savoring_practice",
+              "title": "Mindful Savoring Practice",
+              "priority": 8,
+              "isPrimary": false,
+              "effectiveness": 7.6
+            }
+          ]
+        }
+      ],
+      "get_moving": [
+        {
+          "file": "get_moving_habits-en.json",
+          "goal": "get_moving",
+          "language": "en",
+          "habitCount": 4,
+          "primaryCount": 3,
+          "priorityRange": [
+            1,
+            4
+          ],
+          "habits": [
+            {
+              "id": "move_001_stair_sprints",
+              "title": "Stair Sprint Exercise Snacks",
+              "priority": 1,
+              "isPrimary": true,
+              "effectiveness": 9.1
+            },
+            {
+              "id": "move_002_micro_workouts",
+              "title": "5-Minute Micro-Workout Bursts",
+              "priority": 2,
+              "isPrimary": true,
+              "effectiveness": 8.7
+            },
+            {
+              "id": "move_016_exercise_snacking",
+              "title": "Exercise Snacking Protocol",
+              "priority": 3,
+              "isPrimary": true,
+              "effectiveness": 9
+            },
+            {
+              "id": "move_017_desk_movement_breaks",
+              "title": "Desk Movement Breaks",
+              "priority": 4,
+              "isPrimary": false,
+              "effectiveness": 8.1
+            }
+          ]
+        }
+      ],
+      "better_sleep": [
+        {
+          "file": "better_sleep_habit-en.json",
+          "goal": "better_sleep",
+          "language": "en",
+          "habitCount": 4,
+          "primaryCount": 2,
+          "priorityRange": [
+            1,
+            4
+          ],
+          "habits": [
+            {
+              "id": "sleep_001_478_breathing",
+              "title": "4-7-8 Breathing for Sleep",
+              "priority": 1,
+              "isPrimary": true,
+              "effectiveness": 9.2
+            },
+            {
+              "id": "sleep_002_room_cooling",
+              "title": "Bedroom Temperature Optimization",
+              "priority": 2,
+              "isPrimary": true,
+              "effectiveness": 8.9
+            },
+            {
+              "id": "sleep_016_cognitive_shuffling",
+              "title": "Cognitive Shuffling Technique",
+              "priority": 3,
+              "isPrimary": false,
+              "effectiveness": 8.2
+            },
+            {
+              "id": "sleep_017_sleep_restriction_check",
+              "title": "Two-Minute Sleep Restriction Check",
+              "priority": 4,
+              "isPrimary": false,
+              "effectiveness": 8.7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "files": [
+    {
+      "file": "feel_better_habits-en.json",
+      "goal": "feel_better",
+      "language": "en",
+      "habitCount": 8,
+      "primaryCount": 3,
+      "priorityRange": [
+        1,
+        8
+      ],
+      "habits": [
+        {
+          "id": "feel_001_gratitude_journaling",
+          "title": "Three Good Things Gratitude Practice",
+          "priority": 1,
+          "isPrimary": true,
+          "effectiveness": 9.4
+        },
+        {
+          "id": "feel_016_box_breathing",
+          "title": "Box Breathing Reset",
+          "priority": 2,
+          "isPrimary": true,
+          "effectiveness": 8.6
+        },
+        {
+          "id": "feel_021_micro_kindness",
+          "title": "Micro-Kindness Challenge",
+          "priority": 3,
+          "isPrimary": true,
+          "effectiveness": 8.8
+        },
+        {
+          "id": "feel_018_cold_exposure",
+          "title": "Cold Exposure Protocol",
+          "priority": 4,
+          "isPrimary": false,
+          "effectiveness": 8.3
+        },
+        {
+          "id": "feel_017_power_posing",
+          "title": "Power Posing Protocol",
+          "priority": 5,
+          "isPrimary": false,
+          "effectiveness": 7.9
+        },
+        {
+          "id": "feel_019_grounding_5_4_3_2_1",
+          "title": "5-4-3-2-1 Grounding Technique",
+          "priority": 6,
+          "isPrimary": false,
+          "effectiveness": 8.1
+        },
+        {
+          "id": "feel_020_future_self_visualization",
+          "title": "Future Self Visualization",
+          "priority": 7,
+          "isPrimary": false,
+          "effectiveness": 7.7
+        },
+        {
+          "id": "feel_022_savoring_practice",
+          "title": "Mindful Savoring Practice",
+          "priority": 8,
+          "isPrimary": false,
+          "effectiveness": 7.6
+        }
+      ]
+    },
+    {
+      "file": "get_moving_habits-en.json",
+      "goal": "get_moving",
+      "language": "en",
+      "habitCount": 4,
+      "primaryCount": 3,
+      "priorityRange": [
+        1,
+        4
+      ],
+      "habits": [
+        {
+          "id": "move_001_stair_sprints",
+          "title": "Stair Sprint Exercise Snacks",
+          "priority": 1,
+          "isPrimary": true,
+          "effectiveness": 9.1
+        },
+        {
+          "id": "move_002_micro_workouts",
+          "title": "5-Minute Micro-Workout Bursts",
+          "priority": 2,
+          "isPrimary": true,
+          "effectiveness": 8.7
+        },
+        {
+          "id": "move_016_exercise_snacking",
+          "title": "Exercise Snacking Protocol",
+          "priority": 3,
+          "isPrimary": true,
+          "effectiveness": 9
+        },
+        {
+          "id": "move_017_desk_movement_breaks",
+          "title": "Desk Movement Breaks",
+          "priority": 4,
+          "isPrimary": false,
+          "effectiveness": 8.1
+        }
+      ]
+    },
+    {
+      "file": "better_sleep_habit-en.json",
+      "goal": "better_sleep",
+      "language": "en",
+      "habitCount": 4,
+      "primaryCount": 2,
+      "priorityRange": [
+        1,
+        4
+      ],
+      "habits": [
+        {
+          "id": "sleep_001_478_breathing",
+          "title": "4-7-8 Breathing for Sleep",
+          "priority": 1,
+          "isPrimary": true,
+          "effectiveness": 9.2
+        },
+        {
+          "id": "sleep_002_room_cooling",
+          "title": "Bedroom Temperature Optimization",
+          "priority": 2,
+          "isPrimary": true,
+          "effectiveness": 8.9
+        },
+        {
+          "id": "sleep_016_cognitive_shuffling",
+          "title": "Cognitive Shuffling Technique",
+          "priority": 3,
+          "isPrimary": false,
+          "effectiveness": 8.2
+        },
+        {
+          "id": "sleep_017_sleep_restriction_check",
+          "title": "Two-Minute Sleep Restriction Check",
+          "priority": 4,
+          "isPrimary": false,
+          "effectiveness": 8.7
+        }
+      ]
+    }
+  ]
+}
