@@ -122,6 +122,29 @@ STAGING_API_KEY=your-staging-key
 5. **Deployment**: Production deployment with health verification
 6. **Monitoring**: Continuous monitoring and analytics
 
+## 🛠️ Content Validation System
+
+**Comprehensive CI/CD pipeline prevents breaking changes to habit content.**
+
+- **Automated Testing**: GitHub Actions run validation on every content change
+- **Pre-Commit Hooks**: Local validation before commits reach repository
+- **Smart Recommendations Compatibility**: Ensures content works with recommendation engine
+- **Structure Validation**: Checks required fields, data types, and business rules
+
+### Quick Commands
+```bash
+# Run content validation
+npm run test:content
+
+# Install git hooks (one-time setup)
+./setup-git-hooks.sh
+
+# Manual validation check
+npm run validate
+```
+
+**📖 [Full Documentation](CONTENT_VALIDATION.md)** - Complete guide to the validation system
+
 ## 🛡️ Security
 
 - **Private Repository**: Content not accessible without authentication

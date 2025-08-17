@@ -1,0 +1,90 @@
+#!/bin/bash
+
+# Pre-commit hook for content validation
+# Prevents commits that would break the smart recommendations system
+
+echo "🔍 Running pre-commit content validation..."
+
+# Check if any content files are being committed
+content_files_changed=$(git diff --cached --name-only | grep -E "src/content/.*\.json$" | wc -l)
+
+if [ "$content_files_changed" -gt 0 ]; then
+    echo "📋 Content files detected in commit, running validation..."
+    
+    # Run content validation tests
+    echo "🧪 Running content structure validation..."
+    if ! npm run test:content --silent; then
+        echo "❌ Content validation failed!"
+        echo "   Content structure validation did not pass."
+        echo "   Please fix the issues above before committing."
+        exit 1
+    fi
+    
+    # Test smart recommendations compatibility
+    echo "🧠 Testing smart recommendations compatibility..."
+    cat > .temp-compatibility-test.js << 'EOF'
+const fs = require('fs');
+const path = require('path');
+
+async function testCompatibility() {
+  try {
+    // Load English habits file
+    const habitsPath = path.join(__dirname, 'src/content/habits/multilingual-science-habits-en.json');
+    if (!fs.existsSync(habitsPath)) {
+      throw new Error('English habits file not found');
+    }
+    
+    const habits = JSON.parse(fs.readFileSync(habitsPath, 'utf8'));
+    
+    // Test conversion to smart recommendations format
+    const convertedHabits = habits.map(habit => ({
+      id: habit.id,
+      goalCategory: habit.category, // KEY: Maps 'category' to 'goalCategory'
+      effectivenessScore: habit.effectivenessScore,
+      effectivenessRank: habit.effectivenessRank,
+      isPrimaryRecommendation: habit.isPrimaryRecommendation,
+      difficulty: habit.difficulty,
+      timeMinutes: habit.timeMinutes,
+      goalTags: habit.goalTags || [],
+    }));
+    
+    // Check goal category coverage
+    const categories = ['better_sleep', 'get_moving', 'feel_better'];
+    for (const category of categories) {
+      const categoryHabits = convertedHabits.filter(h => h.goalCategory === category);
+      if (categoryHabits.length === 0) {
+        throw new Error(`No habits found for goal category: ${category}`);
+      }
+      console.log(`✅ Goal category '${category}': ${categoryHabits.length} habits`);
+    }
+    
+    console.log('✅ Smart recommendations compatibility verified');
+    process.exit(0);
+    
+  } catch (error) {
+    console.error('❌ Compatibility test failed:', error.message);
+    process.exit(1);
+  }
+}
+
+testCompatibility();
+EOF
+    
+    if ! node .temp-compatibility-test.js; then
+        rm -f .temp-compatibility-test.js
+        echo "❌ Smart recommendations compatibility test failed!"
+        echo "   Your content changes would break the recommendation system."
+        echo "   Please ensure all habits have valid 'category' fields matching goal categories."
+        exit 1
+    fi
+    
+    rm -f .temp-compatibility-test.js
+    
+    echo "✅ All content validations passed!"
+    echo "📦 Content changes are safe to commit."
+else
+    echo "ℹ️  No content files changed, skipping content validation."
+fi
+
+echo "✅ Pre-commit checks completed successfully!"
+exit 0
