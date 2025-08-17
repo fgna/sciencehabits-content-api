@@ -1,0 +1,183 @@
+name: Content Validation CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths: 
+      - 'src/content/**/*.json'
+      - 'tests/**/*.js'
+      - 'package.json'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/content/**/*.json'
+      - 'tests/**/*.js'
+      - 'package.json'
+
+jobs:
+  content-validation:
+    name: Validate Content Changes
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install Dependencies
+      run: npm ci
+      
+    - name: Run Content Structure Validation
+      run: npm run test:content
+      
+    - name: Run API Endpoint Tests
+      run: npm run test:api
+      
+    - name: Run Integration Tests
+      run: npm run test:integration
+      
+    - name: Generate Content Statistics
+      run: npm run generate:stats
+      
+    - name: Security Scan
+      run: npm run security:scan
+      
+    - name: Upload Test Results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results-${{ matrix.node-version }}
+        path: |
+          test-results/
+          coverage/
+        retention-days: 30
+
+  smart-recommendations-compatibility:
+    name: Smart Recommendations Compatibility 
+    runs-on: ubuntu-latest
+    needs: content-validation
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install Dependencies
+      run: npm ci
+      
+    - name: Start Content API Server
+      run: |
+        npm run dev &
+        sleep 5
+        
+    - name: Test Smart Recommendations Integration
+      run: |
+        # Create and run smart recommendations compatibility test
+        cat > test-smart-recommendations.js << 'EOF'
+        const fetch = require('node-fetch');
+        
+        async function testSmartRecommendationsCompatibility() {
+          console.log('🧠 Testing Smart Recommendations Compatibility...');
+          
+          try {
+            // Test that content API is running
+            const response = await fetch('http://localhost:8000/habits/multilingual-science-habits-en.json');
+            if (!response.ok) {
+              throw new Error(`Content API not accessible: ${response.status}`);
+            }
+            
+            const habits = await response.json();
+            console.log(`✅ Content API accessible, loaded ${habits.length} habits`);
+            
+            // Test EffectivenessRankingService conversion compatibility
+            const convertedHabits = habits.map(habit => ({
+              id: habit.id,
+              goalCategory: habit.category, // KEY: Maps 'category' to 'goalCategory'
+              effectivenessScore: habit.effectivenessScore,
+              effectivenessRank: habit.effectivenessRank,
+              isPrimaryRecommendation: habit.isPrimaryRecommendation,
+              difficulty: habit.difficulty,
+              timeMinutes: habit.timeMinutes,
+              goalTags: habit.goalTags || [],
+              translations: {
+                en: {
+                  title: habit.title,
+                  description: habit.description,
+                  researchSummary: habit.researchSummary,
+                  researchSource: habit.sources?.[0] || 'Research source pending'
+                }
+              }
+            }));
+            
+            console.log(`✅ Successfully converted ${convertedHabits.length} habits to EffectivenessRankingService format`);
+            
+            // Test goal category coverage
+            const categories = ['better_sleep', 'get_moving', 'feel_better'];
+            for (const category of categories) {
+              const categoryHabits = convertedHabits.filter(h => h.goalCategory === category);
+              if (categoryHabits.length === 0) {
+                throw new Error(`No habits found for goal category: ${category}`);
+              }
+              console.log(`✅ Goal category '${category}': ${categoryHabits.length} habits available`);
+            }
+            
+            console.log('✅ Smart Recommendations compatibility test PASSED');
+            process.exit(0);
+            
+          } catch (error) {
+            console.error('❌ Smart Recommendations compatibility test FAILED:', error.message);
+            process.exit(1);
+          }
+        }
+        
+        testSmartRecommendationsCompatibility();
+        EOF
+        
+        node test-smart-recommendations.js
+
+  deployment-readiness:
+    name: Deployment Readiness Check
+    runs-on: ubuntu-latest  
+    needs: [content-validation, smart-recommendations-compatibility]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install Dependencies
+      run: npm ci
+      
+    - name: Build Production Assets
+      run: npm run build:production
+      
+    - name: Final Content Validation
+      run: npm run test:content
+      
+    - name: Health Check
+      run: npm run check:health
+      
+    - name: Mark Deployment Ready
+      run: |
+        echo "✅ All validations passed - content changes are safe for deployment"
+        echo "deployment_ready=true" >> $GITHUB_OUTPUT

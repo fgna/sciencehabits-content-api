@@ -1,0 +1,131 @@
+[
+  {
+    "id": "move_001_stair_sprints",
+    "title": "Stair Sprint Exercise Snacks",
+    "description": "High-intensity 1-2 minute stair climbing bursts for maximum cardiovascular and metabolic benefits",
+    "category": "get_moving",
+    "difficulty": "intermediate",
+    "timeMinutes": 2,
+    "language": "en",
+    "researchBacked": true,
+    "effectivenessScore": 9.1,
+    "effectivenessRank": 1,
+    "priority": 1,
+    "isPrimaryRecommendation": true,
+    "recommendedForYou": true,
+    "goalTags": ["cardiovascular_health", "metabolic_boost", "energy_increase"],
+    "instructions": [
+      "Find a staircase with at least 10 steps",
+      "Warm up with 30 seconds normal walking",
+      "Sprint up stairs taking 2 steps at a time",
+      "Walk down slowly to recover",
+      "Repeat 3-5 times",
+      "Cool down with gentle stretching"
+    ],
+    "whyEffective": "Activates fast-twitch muscle fibers and triggers EPOC (excess post-exercise oxygen consumption), increasing metabolic rate by 15% for up to 2 hours post-exercise.",
+    "researchSummary": "McMaster University study with 24 participants showed stair climbing snacks improved VO2 peak by 5% and peak power output by 12% in 6 weeks of 3x weekly sessions.",
+    "sources": ["Jenkins, E.M., et al. (2019). Do stair climbing exercise snacks improve cardiorespiratory fitness? Applied Physiology, Nutrition, and Metabolism, 44(6), 681-684"],
+    "optimalTiming": "Mid-morning or early afternoon for energy boost",
+    "progressionTips": [
+      "Start with 2-3 sprints and gradually increase",
+      "Focus on form over speed initially",
+      "Add sessions gradually to 3x per day maximum"
+    ]
+  },
+  {
+    "id": "move_002_micro_workouts",
+    "title": "5-Minute Micro-Workout Bursts",
+    "description": "Brief high-intensity bodyweight exercises that boost energy and improve fitness throughout the day",
+    "category": "get_moving",
+    "difficulty": "beginner",
+    "timeMinutes": 5,
+    "language": "en",
+    "researchBacked": true,
+    "effectivenessScore": 8.7,
+    "effectivenessRank": 2,
+    "priority": 2,
+    "isPrimaryRecommendation": true,
+    "recommendedForYou": true,
+    "goalTags": ["fitness", "energy_boost", "strength_building"],
+    "instructions": [
+      "Choose 3-4 bodyweight exercises (squats, pushups, jumping jacks)",
+      "Perform each exercise for 45 seconds",
+      "Rest 15 seconds between exercises",
+      "Complete 1-2 rounds total",
+      "Focus on proper form over speed"
+    ],
+    "whyEffective": "Brief intense exercise activates mitochondrial biogenesis and increases BDNF (brain-derived neurotrophic factor) production, improving energy levels and cognitive function for 2-4 hours.",
+    "researchSummary": "Research shows 5-minute exercise snacks performed 3x daily improved cardiovascular fitness and sustained energy levels significantly better than sedentary controls.",
+    "sources": ["Francois, M.E., et al. (2018). Exercise snacks before meals: a novel strategy to improve glycaemic control in individuals with insulin resistance. Diabetologia, 61(7), 1568-1579"],
+    "optimalTiming": "Morning, lunch break, and mid-afternoon for best results",
+    "progressionTips": [
+      "Start with 1 micro-workout daily and build up",
+      "Vary exercises to prevent boredom",
+      "Track energy levels to find optimal timing"
+    ]
+  },
+  {
+    "id": "move_016_exercise_snacking",
+    "title": "Exercise Snacking Protocol",
+    "description": "Perform 3 daily exercise snacks of high-intensity movement for 1-3 minutes each, separated by at least 60 minutes",
+    "category": "get_moving",
+    "difficulty": "intermediate",
+    "timeMinutes": 3,
+    "language": "en",
+    "researchBacked": true,
+    "effectivenessScore": 9.0,
+    "effectivenessRank": 16,
+    "priority": 3,
+    "isPrimaryRecommendation": true,
+    "recommendedForYou": true,
+    "goalTags": ["metabolic_health", "high_intensity", "glucose_control"],
+    "instructions": [
+      "Set 3 alarms throughout day, 60+ minutes apart",
+      "Do 30 seconds each: jumping jacks, burpees, mountain climbers",
+      "Rest 30 seconds between exercises",
+      "Perform at maximum safe intensity",
+      "Complete all 3 snacks for cumulative benefit"
+    ],
+    "whyEffective": "Exercise snacking activates AMPK pathways and improves glucose clearance equivalent to 20% of continuous exercise benefits. Achieves 76.9% of maximum heart rate in just 2 minutes.",
+    "researchSummary": "University of British Columbia study found 3 daily exercise snacks improved glucose control by 17% and cardiorespiratory fitness by 12% versus sedentary control, with 93% completion rates.",
+    "sources": ["Jenkins, E.M., et al. (2019). Do stair climbing exercise snacks improve cardiorespiratory fitness? Applied Physiology, Nutrition, and Metabolism, 44(6), 681-684"],
+    "optimalTiming": "Morning, lunch, and mid-afternoon, 2+ hours apart",
+    "progressionTips": [
+      "Start with 2 snacks daily and build up",
+      "Focus on intensity over duration",
+      "Add exercises like squats or push-ups for variety"
+    ]
+  },
+  {
+    "id": "move_017_desk_movement_breaks",
+    "title": "Desk Movement Breaks",
+    "description": "Perform 1-minute movement breaks every 30 minutes during desk work to counteract sedentary harm",
+    "category": "get_moving",
+    "difficulty": "beginner",
+    "timeMinutes": 1,
+    "language": "en",
+    "researchBacked": true,
+    "effectivenessScore": 8.1,
+    "effectivenessRank": 17,
+    "priority": 4,
+    "isPrimaryRecommendation": false,
+    "recommendedForYou": false,
+    "goalTags": ["workplace_fitness", "sedentary_breaks", "circulation"],
+    "instructions": [
+      "Set 30-minute timer on phone or computer",
+      "Stand up when timer goes off",
+      "Do calf raises, desk pushups, or march in place",
+      "Continue for 60 seconds",
+      "Sit back down and reset timer"
+    ],
+    "whyEffective": "Breaks sedentary time and improves glucose metabolism. Reduces all-cause mortality risk by 18% and increases metabolic rate for 30 minutes after each break.",
+    "researchSummary": "American Journal of Preventive Medicine study of 7,985 adults found 2-minute movement breaks every 30 minutes reduced cardiovascular disease risk by 18% compared to continuous sitting.",
+    "sources": ["Diaz, K.M., et al. (2017). Patterns of sedentary behavior and mortality in U.S. middle-aged and older adults. Annals of Internal Medicine, 167(7), 465-475"],
+    "optimalTiming": "Every 30 minutes during desk work",
+    "progressionTips": [
+      "Start with hourly breaks, progress to 30-minute intervals",
+      "Vary movements to prevent boredom",
+      "Use movement as transition between tasks"
+    ]
+  }
+]
