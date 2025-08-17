@@ -1,0 +1,47 @@
+{
+  "navigation.dashboard": "Dashboard",
+  "navigation.habits": "My Habits",
+  "navigation.research": "Research",
+  "navigation.analytics": "Analytics",
+  "navigation.settings": "Settings",
+  "navigation.profile": "Profile",
+  
+  "common.save": "Save",
+  "common.cancel": "Cancel",
+  "common.loading": "Loading...",
+  "common.error": "Error",
+  "common.success": "Success",
+  "common.confirm": "Confirm",
+  "common.delete": "Delete",
+  "common.edit": "Edit",
+  "common.add": "Add",
+  "common.view": "View",
+  
+  "habits.title": "Habits",
+  "habits.addNew": "Add New Habit",
+  "habits.categories.all": "All Categories",
+  "habits.categories.sleep": "Sleep",
+  "habits.categories.productivity": "Productivity", 
+  "habits.categories.health": "Health",
+  "habits.categories.mindfulness": "Mindfulness",
+  "habits.categories.nutrition": "Nutrition",
+  "habits.categories.exercise": "Exercise",
+  
+  "research.title": "Research Articles",
+  "research.evidenceLevel.systematic_review": "Systematic Review",
+  "research.evidenceLevel.rct": "Randomized Controlled Trial",
+  "research.evidenceLevel.observational": "Observational Study",
+  "research.evidenceLevel.case_study": "Case Study",
+  
+  "analytics.title": "Analytics",
+  "analytics.overview": "Overview",
+  "analytics.progress": "Progress",
+  "analytics.insights": "Insights",
+  "analytics.streaks": "Streaks",
+  
+  "settings.title": "Settings",
+  "settings.language": "Language",
+  "settings.notifications": "Notifications",
+  "settings.privacy": "Privacy",
+  "settings.account": "Account"
+}

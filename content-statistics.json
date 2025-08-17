@@ -1,0 +1,172 @@
+{
+  "timestamp": "2025-08-16T05:18:04.561Z",
+  "summary": {
+    "totalFiles": 6,
+    "totalHabits": 7,
+    "totalResearch": 7,
+    "totalLocaleKeys": 65,
+    "averageHabitsPerLanguage": 2,
+    "averageResearchPerLanguage": 2,
+    "averageLocaleKeysPerLanguage": 16
+  },
+  "byLanguage": {
+    "en": {
+      "language": "en",
+      "habits": 5,
+      "research": 5,
+      "localeKeys": 40,
+      "files": 3,
+      "completeness": 100,
+      "totalWordCount": 317,
+      "averageWordCount": 32
+    },
+    "de": {
+      "language": "de",
+      "habits": 2,
+      "research": 2,
+      "localeKeys": 25,
+      "files": 3,
+      "completeness": 100,
+      "totalWordCount": 118,
+      "averageWordCount": 30
+    },
+    "fr": {
+      "language": "fr",
+      "habits": 0,
+      "research": 0,
+      "localeKeys": 0,
+      "files": 0,
+      "completeness": 0,
+      "totalWordCount": 0,
+      "averageWordCount": 0
+    },
+    "es": {
+      "language": "es",
+      "habits": 0,
+      "research": 0,
+      "localeKeys": 0,
+      "files": 0,
+      "completeness": 0,
+      "totalWordCount": 0,
+      "averageWordCount": 0
+    }
+  },
+  "byCategory": {
+    "sleep": {
+      "habits": 2,
+      "research": 4,
+      "languages": [
+        "en",
+        "de"
+      ],
+      "languageCount": 2,
+      "total": 6
+    },
+    "productivity": {
+      "habits": 3,
+      "research": 2,
+      "languages": [
+        "en",
+        "de"
+      ],
+      "languageCount": 2,
+      "total": 5
+    },
+    "mindfulness": {
+      "habits": 1,
+      "research": 1,
+      "languages": [
+        "en"
+      ],
+      "languageCount": 1,
+      "total": 2
+    },
+    "nutrition": {
+      "habits": 1,
+      "research": 0,
+      "languages": [
+        "en"
+      ],
+      "languageCount": 1,
+      "total": 1
+    }
+  },
+  "quality": {
+    "totalContent": 14,
+    "researchBackedHabits": 7,
+    "researchBackedPercentage": 50,
+    "highQualityResearch": 7,
+    "highQualityPercentage": 50,
+    "lowWordCountItems": 1,
+    "lowWordCountPercentage": 7,
+    "placeholderContent": 0,
+    "placeholderPercentage": 0,
+    "overallQualityScore": 98
+  },
+  "completeness": {
+    "en": {
+      "language": "en",
+      "habits": {
+        "count": 5,
+        "percentage": 100
+      },
+      "research": {
+        "count": 5,
+        "percentage": 100
+      },
+      "locales": {
+        "count": 40,
+        "percentage": 100
+      },
+      "overall": 100
+    },
+    "de": {
+      "language": "de",
+      "habits": {
+        "count": 2,
+        "percentage": 40
+      },
+      "research": {
+        "count": 2,
+        "percentage": 40
+      },
+      "locales": {
+        "count": 25,
+        "percentage": 63
+      },
+      "overall": 48
+    },
+    "fr": {
+      "language": "fr",
+      "habits": {
+        "count": 0,
+        "percentage": 0
+      },
+      "research": {
+        "count": 0,
+        "percentage": 0
+      },
+      "locales": {
+        "count": 0,
+        "percentage": 0
+      },
+      "overall": 0
+    },
+    "es": {
+      "language": "es",
+      "habits": {
+        "count": 0,
+        "percentage": 0
+      },
+      "research": {
+        "count": 0,
+        "percentage": 0
+      },
+      "locales": {
+        "count": 0,
+        "percentage": 0
+      },
+      "overall": 0
+    }
+  }
+}

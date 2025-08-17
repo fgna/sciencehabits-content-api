@@ -1,0 +1,29 @@
+{
+  "navigation.dashboard": "Übersicht",
+  "navigation.habits": "Meine Gewohnheiten", 
+  "navigation.research": "Forschung",
+  "navigation.analytics": "Analysen",
+  "navigation.settings": "Einstellungen",
+  "navigation.profile": "Profil",
+  
+  "common.save": "Speichern",
+  "common.cancel": "Abbrechen", 
+  "common.loading": "Laden...",
+  "common.error": "Fehler",
+  "common.success": "Erfolg",
+  "common.confirm": "Bestätigen",
+  "common.delete": "Löschen",
+  "common.edit": "Bearbeiten",
+  "common.add": "Hinzufügen",
+  "common.view": "Anzeigen",
+  
+  "habits.title": "Gewohnheiten",
+  "habits.addNew": "Neue Gewohnheit hinzufügen",
+  "habits.categories.all": "Alle Kategorien",
+  "habits.categories.sleep": "Schlaf",
+  "habits.categories.productivity": "Produktivität",
+  "habits.categories.health": "Gesundheit", 
+  "habits.categories.mindfulness": "Achtsamkeit",
+  "habits.categories.nutrition": "Ernährung",
+  "habits.categories.exercise": "Bewegung"
+}

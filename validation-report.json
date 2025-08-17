@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-08-16T05:13:09.546Z",
+  "statistics": {
+    "filesValidated": 4,
+    "totalErrors": 2,
+    "totalWarnings": 26,
+    "validationTime": 6
+  },
+  "errors": [
+    "Invalid JSON in src/content/habits/en.json: validate is not a function",
+    "Invalid JSON in src/content/habits/de.json: validate is not a function"
+  ],
+  "warnings": [
+    "Missing content file: src/content/habits/fr.json",
+    "Missing content file: src/content/habits/es.json",
+    "Missing content file: src/content/research/fr.json",
+    "Missing content file: src/content/research/es.json",
+    "Missing content file: src/content/locales/fr.json",
+    "Missing content file: src/content/locales/es.json",
+    "Missing habits file for fr: src/content/habits/fr.json",
+    "Missing habits file for es: src/content/habits/es.json",
+    "Missing research file for fr: src/content/research/fr.json",
+    "Missing research file for es: src/content/research/es.json",
+    "Missing locales file for fr: src/content/locales/fr.json",
+    "Missing locales file for es: src/content/locales/es.json",
+    "src/content/habits/en.json[2]: References unknown research: pomodoro-effectiveness-research-2024",
+    "src/content/habits/en.json[4]: References unknown research: chrono-nutrition-study-2024",
+    "src/content/habits/en.json[4]: References unknown research: meal-timing-cognitive-performance-2023",
+    "Missing de translations for habits: focus-enhancement-technique, mindful-breathing-practice, nutrition-timing-optimization",
+    "Missing fr translations for habits: sleep-optimization-protocol, morning-productivity-routine, focus-enhancement-technique, mindful-breathing-practice, nutrition-timing-optimization",
+    "Missing es translations for habits: sleep-optimization-protocol, morning-productivity-routine, focus-enhancement-technique, mindful-breathing-practice, nutrition-timing-optimization",
+    "Missing de translations for research: morning-routine-cognitive-performance-2024, attention-training-study-2023, breathwork-stress-reduction-2024",
+    "Missing fr translations for research: sleep-temperature-study-2024, circadian-rhythm-optimization-2023, morning-routine-cognitive-performance-2024...",
+    "Missing es translations for research: sleep-temperature-study-2024, circadian-rhythm-optimization-2023, morning-routine-cognitive-performance-2024...",
+    "Missing de locale keys: research.title, research.evidenceLevel.systematic_review, research.evidenceLevel.rct, research.evidenceLevel.observational, research.evidenceLevel.case_study...",
+    "Missing fr locale keys: navigation.dashboard, navigation.habits, navigation.research, navigation.analytics, navigation.settings...",
+    "Missing es locale keys: navigation.dashboard, navigation.habits, navigation.research, navigation.analytics, navigation.settings...",
+    "Habit sleep-optimization-protocol has low word count (15 words)",
+    "Overall content word count is below recommended minimum"
+  ],
+  "passed": false
+}

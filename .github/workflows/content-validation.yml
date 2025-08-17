@@ -1,0 +1,129 @@
+name: 🔍 Content Validation & Quality Assurance
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+
+jobs:
+  validate-content:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Content Repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 🔧 Install Dependencies
+        run: npm ci
+
+      - name: 🔍 Validate Content Schema
+        run: npm run validate
+
+      - name: 📊 Generate Content Statistics
+        run: npm run generate:stats
+
+      - name: 🧪 Run Content Tests
+        run: npm run test:content
+
+      - name: 📋 Generate Validation Report
+        if: always()
+        run: |
+          echo "## Content Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f validation-report.json ]; then
+            echo "### Summary" >> $GITHUB_STEP_SUMMARY
+            node -e "
+              const report = JSON.parse(require('fs').readFileSync('validation-report.json', 'utf8'));
+              console.log(\`- Files validated: \${report.statistics.filesValidated}\`);
+              console.log(\`- Errors: \${report.statistics.totalErrors}\`);
+              console.log(\`- Warnings: \${report.statistics.totalWarnings}\`);
+              console.log(\`- Status: \${report.passed ? '✅ PASSED' : '❌ FAILED'}\`);
+            " >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 📤 Upload Validation Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-results-${{ github.sha }}
+          path: |
+            validation-report.json
+            content-statistics.json
+          retention-days: 30
+
+  test-api-functionality:
+    runs-on: ubuntu-latest
+    needs: validate-content
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 🔧 Install Dependencies
+        run: npm ci
+
+      - name: 🏗️ Build API for Testing
+        run: npm run build:staging
+
+      - name: 🚀 Deploy to GitHub Pages (Staging)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./staging
+          destination_dir: test-${{ github.sha }}
+
+      - name: ⏳ Wait for Deployment
+        run: sleep 30
+
+      - name: 🧪 Test API Endpoints
+        run: |
+          BASE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/test-${{ github.sha }}"
+          
+          echo "Testing health endpoint..."
+          curl -f "${BASE_URL}/?endpoint=health" || exit 1
+          
+          echo "API deployment test successful!"
+
+      - name: 🧹 Cleanup Test Deployment
+        if: always()
+        run: |
+          echo "Test deployment created at: test-${{ github.sha }}"
+          echo "This will be cleaned up in the next deployment"
+
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 🔧 Install Dependencies
+        run: npm ci
+
+      - name: 🛡️ Run Security Audit
+        run: npm audit --audit-level moderate
+
+      - name: 🔒 Run Security Scan
+        run: npm run security:scan

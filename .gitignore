@@ -1,0 +1,90 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+/staging
+/production
+*.tgz
+*.tar.gz
+
+# Environment variables (CRITICAL - DO NOT COMMIT)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API Keys and Secrets (NEVER COMMIT)
+secrets/
+*.key
+*.pem
+api-keys.json
+config-secrets.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Cache directories
+.cache/
+.parcel-cache/
+.npm
+.eslintcache
+
+# Testing
+test-results/
+coverage-report/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# GitHub Pages build
+_site/
+.jekyll-cache/
+
+# Content staging
+content-staging/
+content-backup/
+
+# Security scanning results
+security-report.json
+vulnerability-report.json
+
+# Performance testing
+performance-results/
+load-test-results/
+
+# Documentation builds
+docs-build/
